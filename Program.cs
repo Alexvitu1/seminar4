@@ -30,7 +30,7 @@ int number = SetNumber();
 int MetodNum(int num)
 {
     int cont = 0;
-    for (; num > 0 ; num /=10 )
+    for (; num != 0 ; num /=10 )
     {
             ++cont;
     }
