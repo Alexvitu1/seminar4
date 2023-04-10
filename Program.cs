@@ -44,27 +44,51 @@
 
 // Задача 25
 
-Console.Clear();
-int SetNumber(string text = "")
-{
-    Console.Write($"Введите число {text}: ");
-    int num = Convert.ToInt32(Console.ReadLine());
-    return num;
-}
+// Console.Clear();
+// int SetNumber(string text = "")
+// {
+//     Console.Write($"Введите число {text}: ");
+//     int num = Convert.ToInt32(Console.ReadLine());
+//     return num;
+// }
 
-int num = SetNumber("A");
-int sqr = SetNumber("B");
+// int num = SetNumber("A");
+// int sqr = SetNumber("B");
 
-int Step(int numer, int sqrer)
+// int Step(int numer, int sqrer)
+// {
+//     int result = 1;
+//     for (int i=1; i<=sqrer; ++i)
+//     {
+//         result = result*numer;
+//     }
+//     return result;
+
+// }
+
+// Console.WriteLine(Step(num, sqr));
+
+// Задача 30
+
+
+void MetodArray(int[] array)
 {
-    int result = 1;
-    for (int i=1; i<=sqrer; ++i)
+    int length = array.Length;
+    Random rnd = new Random();
+    for(int i=0; i<length; ++i)
     {
-        result = result*numer;
+       array[i] = rnd.Next(2);
     }
-    return result;
-
 }
 
-Console.WriteLine(Step(num, sqr));
+void Print(int[] array)
+{
+    for(int i=0; i<array.Length; ++i )
+    {
+        Console.Write($" {array[i]}");
+    }
+}
 
+int[] array = new int[8];
+MetodArray(array);
+Print(array);
