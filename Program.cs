@@ -13,4 +13,4 @@ for (int i = 1; i <= num; ++i)
 {
 sum +=i;
 }
-Console.WriteLine(sum);
+Console.WriteLine("sum = " + sum);
