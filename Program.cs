@@ -1,74 +1,127 @@
-﻿// Задача 24
-// Console.Clear();
+﻿// // Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами.
+// //  Напишите программу, которая покажет количество чётных чисел в массиве.
+
+// // [345, 897, 568, 234] -> 2
+
+// // Задача 30
+
 // int SetNumber(string text = "")
 // {
-//     Console.Write($"Введите число {text}:");
-//     int num = Convert.ToInt32(Console.ReadLine());
-//     return num;
-// }
-// int num = SetNumber();
-// int sum = 0;
-
-// for (int i = 1; i <= num; ++i)
-// {
-// sum +=i;
-// }
-// Console.WriteLine("sum = " + sum);
-
-
-
-// Задача 26
-// Console.Clear();
-// int SetNumber(string text = "")
-// {
-//     Console.Write($"Введите число {text}:");
-//     int num = Convert.ToInt32(Console.ReadLine());
-//     return num;
+//      Console.Write($"Введите размер массива {text}:");
+//      int num = Convert.ToInt32(Console.ReadLine());
+//      return num;
 // }
 
-// int number = SetNumber();
-// int MetodNum(int num)
+
+// void MetodArray(int[] array)
 // {
-//     int cont = 0;
-//     for (; num != 0 ; num /=10 )
+//     int length = array.Length;
+//     Random rnd = new Random();
+//     for(int i=0; i<length; ++i)
 //     {
-//             ++cont;
+//        array[i] = rnd.Next(100, 999);
 //     }
-//     return cont;
 // }
 
+// void Print(int[] array)
+// {
+//     for(int i=0; i<array.Length; ++i )
+//     {
+//         Console.Write($" {array[i]}");
+//     }
+// }
 
+// int MethodChislo(int[] arrray)
+// {
+//     int summa = 0;
+//     for(int i=0; i<arrray.Length; ++i )
+//     {
+//                 if (arrray[i] % 2 == 0)
+//         {
+//             summa +=1;
+//         }
+//     }
+    
+//     return summa;
+// }
 
-//  System.Console.WriteLine(MetodNum(number));
+// int length = SetNumber();
+// int[] array = new int[length];
+// MetodArray(array);
+// Print(array);
+// int sum = MethodChislo(array);
+// System.Console.WriteLine();
+// System.Console.WriteLine($"Количество четных чисел в массиве: {sum}");
 
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях.
 
-// Задача 25
+// [3, 7, 23, 12] -> 19
 
-// Console.Clear();
+// [-4, -6, 89, 6] -> 0
+
+// System.Console.Clear();
 // int SetNumber(string text = "")
 // {
-//     Console.Write($"Введите число {text}: ");
-//     int num = Convert.ToInt32(Console.ReadLine());
-//     return num;
+//      Console.Write($"Введите размер массива {text}:");
+//      int num = Convert.ToInt32(Console.ReadLine());
+//      return num;
 // }
 
-// int num = SetNumber("A");
-// int sqr = SetNumber("B");
 
-// int Step(int numer, int sqrer)
+// void MetodArray(int[] array)
 // {
-//     int result = 1;
-//     for (int i=1; i<=sqrer; ++i)
+//     int length = array.Length;
+//     Random rnd = new Random();
+//     for(int i=0; i<length; ++i)
 //     {
-//         result = result*numer;
+//        array[i] = rnd.Next(0, 10);
 //     }
-//     return result;
-
 // }
 
-// Console.WriteLine(Step(num, sqr));
+// void Print(int[] array)
+// {
+//     for(int i=0; i<array.Length; ++i )
+//     {
+//         Console.Write($" {array[i]}");
+//     }
+// }
 
-// Задача 30
+// int MethodSum(int[] arrray)
+// {
+//     int summa = 0;
+//     for(int i=0; i<arrray.Length; ++i )
+//     {
+//         if (arrray[i] % 2 != 0)
+//          {
+//              summa +=arrray[i];
+//          }
+//     }
+    
+//      return summa;
+//  }
+
+// int length = SetNumber();
+// int[] array = new int[length];
+// MetodArray(array);
+// Print(array);
+// int sum = MethodSum(array);
+// System.Console.WriteLine();
+// System.Console.WriteLine($"Сумма нечетных элементов массива: {sum}");
+
+
+// Задача 38: Задайте массив вещественных чисел. 
+// Найдите разницу между максимальным и минимальным элементов массива.
+
+// [3 7 22 2 78] -> 76
+
+System.Console.Clear();
+int SetNumber(string text = "")
+{
+     Console.Write($"Введите размер массива {text}:");
+     int num = Convert.ToInt32(Console.ReadLine());
+     return num;
+}
 
 
 void MetodArray(int[] array)
@@ -77,7 +130,7 @@ void MetodArray(int[] array)
     Random rnd = new Random();
     for(int i=0; i<length; ++i)
     {
-       array[i] = rnd.Next(2);
+       array[i] = rnd.Next(1, 10);
     }
 }
 
@@ -89,6 +142,32 @@ void Print(int[] array)
     }
 }
 
-int[] array = new int[8];
+
+(int max, int min) MethodMaxMin(int[] array)
+{  
+    int max = array[0];
+    int min = array[0];
+    for(int i=0; i<array.Length; ++i )
+    {
+        
+        if (array[i] > max)
+          {
+              max = array[i];
+          }
+        if(array[i]< min)
+        {
+            min = array[i];
+        }
+    }
+    
+    return (max, min);
+}
+
+int length = SetNumber();
+int[] array = new int[length];
 MetodArray(array);
 Print(array);
+
+(int max, int min) = MethodMaxMin(array);
+System.Console.WriteLine();
+System.Console.WriteLine($"Разница между максимальным и минимальным значениями: {max-min}");
